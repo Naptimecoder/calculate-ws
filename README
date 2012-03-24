@@ -1,0 +1,34 @@
+About
+-----
+This is a RESTful web service using Jersey (http://jersey.java.net/), that calculates the area of a square, rectangle or triangle. The result is returned in JSON notation.
+
+Requirements
+------------
+This assumes you have the following already installed:
+Java
+Maven
+Tomcat
+
+Usage
+-----
+In the calculate-ws directory run the"mvn package" command.  You will see a lot of output at the end of which you should see a "Build Succesful" message.
+
+A "calculate.war" file will be created in the calculate-ws/target directory.  Deploy that calculate.war file to tomcat's webapp directory.
+
+i) Square
+http://localhost:8080/calculate/area/square/{side}
+Example: http://localhost:8080/calculate/area/square/4
+Result: {"result":16}
+
+ii) Rectangle
+http://localhost:8080/calculate/area/rectangle/{width}/{height}
+Example: http://localhost:8080/calculate/area/rectangle/4/2
+Result: {"result":8}
+
+iii) Triangle
+http://localhost:8080/calculate/area/triangle/{base}/{height}
+Example: http://localhost:8080/calculate/area/triangle/4/3
+Result: {"result":6}
+
+
+
