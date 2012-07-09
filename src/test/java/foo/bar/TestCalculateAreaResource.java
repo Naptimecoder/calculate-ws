@@ -66,4 +66,13 @@ public class TestCalculateAreaResource extends JerseyTest {
         ClientResponse.Status status = webResource.head().getClientResponseStatus();
         assertEquals(404, status.getStatusCode());
     }
+    
+    @Test
+    public void testHealthCheck() {
+        WebResource webResource = resource().path("/area/healthcheck");
+        ClientResponse.Status status = webResource.head().getClientResponseStatus();
+        assertEquals(200, status.getStatusCode());
+        String result = webResource.get(String.class);
+        assertEquals("OK", result);
+    }
 }
